@@ -21,111 +21,137 @@ The Airbnb Clone Project is a comprehensive, real-world application designed to 
 # Database Design
 ## The key entities required for the project
 + Users
-    Represents: A person using the platform (guest or host). Key Fields:
+Represents: A person using the platform (guest or host). Key Fields:
 
-    `id` (unique identifier),
+`id` (unique identifier),
 
-    `name`,
+`name`,
 
-    `email`,
+`email`,
 
-    `password_hash`,
+`password_hash`,
 
-    `user_type` (e.g., "host" or "guest")
+`user_type` (e.g., "host" or "guest")
 
-    Relationships:
+Relationships:
 
-    A user can own multiple properties (if a host). (1 - many)
+A user can own multiple properties (if a host). (1 - many)
 
-    A user can make multiple bookings (if a guest). (1 - many)
+A user can make multiple bookings (if a guest). (1 - many)
 
-    A user can write multiple reviews (1 - many)
-    
+A user can write multiple reviews (1 - many)
+
 + Properties
 
-    Represents: A listing / accomodation  available for rent. Key Fields:
+Represents: A listing / accomodation  available for rent. Key Fields:
 
-    `id`,
+`id`,
 
-    `owner_id` (references User),
+`owner_id` (references User),
 
-    `title`,
+`title`,
 
-    `description`,
+`description`,
 
-    `location`,
+`location`,
 
-    `price_per_night`
+`price_per_night`
 
-    Relationships:
+Relationships:
 
-    A property belongs to one user (the host). (1 - 1)
+A property belongs to one user (the host). (1 - 1)
 
-    A property can have many bookings. (1 - many)
+A property can have many bookings. (1 - many)
 
-    A property can have many reviews. (1 - many)
+A property can have many reviews. (1 - many)
 
 + Bookings
-    Represents: A reservation made by a user. Key Fields:
+Represents: A reservation made by a user. Key Fields:
 
-    `id`
+`id`
 
-    `property_id`
+`property_id`
 
-    `user_id` (the guest)
+`user_id` (the guest)
 
-    `check_in_date`
+`check_in_date`
 
-    `check_out_date`
+`check_out_date`
 
-    `status` (e.g., "confirmed", "cancelled")
+`status` (e.g., "confirmed", "cancelled")
 
-    Relationships:
+Relationships:
 
-    A booking is made by one user (the guest).  (Many -1)
+A booking is made by one user (the guest).  (Many -1)
 
-    A booking is for one property. (1 -1)
+A booking is for one property. (1 -1)
 
-    A booking may be linked to a payment.(1 -1)
+A booking may be linked to a payment.(1 -1)
 
 + Reviews
-    Purpose: Feedback from guests about properties. Key Fields:
+Purpose: Feedback from guests about properties. Key Fields:
 
-    `review_id` (Primary Key),
+`review_id` (Primary Key),
 
-    `property_id`, 
-    
-    `guest_id` (Foreign Keys),
+`property_id`, 
 
-    `rating` (1–5),
+`guest_id` (Foreign Keys),
 
-    `comment`,
+`rating` (1–5),
 
-    `created_at`
+`comment`,
+
+`created_at`
 
 
-    Relationships:
+Relationships:
 
-    A review is written by a guest for a property. (1 -1)
+A review is written by a guest for a property. (1 -1)
 
-    A guest can leave one review per booking. (1 - 1)
+A guest can leave one review per booking. (1 - 1)
 
 + Payments
 
-    Purpose: Tracks transactions for bookings. Key Fields:
+Purpose: Tracks transactions for bookings. Key Fields:
 
-    `payment_id` (Primary Key),
+`payment_id` (Primary Key),
 
-    `booking_id` (Foreign Key → Bookings),
+`booking_id` (Foreign Key → Bookings),
 
-    `amount`, 
+`amount`, 
 
-    `payment_method`, 
-    
-    `payment_status`,
+`payment_method`, 
 
-    `paid_at`
+`payment_status`,
 
-    Relationships:
+`paid_at`
 
-    A payment is linked to one booking. (1 - 1)
+Relationships:
+
+A payment is linked to one booking. (1 - 1)
+
+# Feature Breakdown
+
+1. API Documentation
+OpenAPI Standard: The backend APIs are documented using the OpenAPI standard to ensure clarity and ease of integration.
+Django REST Framework: Provides a comprehensive RESTful API for handling CRUD operations on user and property data.
+GraphQL: Offers a flexible and efficient query mechanism for interacting with the backend.
+2. User Authentication
+Endpoints: /users/, /users/{user_id}/
+Features: Register new users, authenticate, and manage user profiles.
+3. Property Management
+Endpoints: /properties/, /properties/{property_id}/
+Features: Create, update, retrieve, and delete property listings.
+4. Booking System
+Endpoints: /bookings/, /bookings/{booking_id}/
+Features: Make, update, and manage bookings, including check-in and check-out details.
+5. Payment Processing
+Endpoints: /payments/
+Features: Handle payment transactions related to bookings.
+6. Review System
+Endpoints: /reviews/, /reviews/{review_id}/
+Features: Post and manage reviews for properties.
+7. Database Optimizations
+Indexing: Implement indexes for fast retrieval of frequently accessed data.
+Caching: Use caching strategies to reduce database load and improve performance.
+
