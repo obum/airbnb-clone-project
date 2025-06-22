@@ -155,3 +155,47 @@ Features: Post and manage reviews for properties.
 Indexing: Implement indexes for fast retrieval of frequently accessed data.
 Caching: Use caching strategies to reduce database load and improve performance.
 
+# API Security
+
+🔐 1. Authentication:
+Ensures users are who they say they are—typically via login forms, password hashing, and optional two-factor authentication (2FA).
+
+Why it matters: Protects user accounts from unauthorized access. Without it, malicious actors could impersonate users, steal personal data, or hijack bookings.
+
+🛂 2. Authorization:
+Controls what users are allowed to do once authenticated. A guest shouldn't access host dashboards, and vice versa.
+
+Why it matters: Prevents privilege escalation and data leakage—especially important for separating sensitive operations like payouts or modifying listings.
+
+🔄 3. Rate Limiting & Throttling:
+Limits how often a user or IP can hit your APIs.
+
+Why it matters: Mitigates brute-force attacks (like guessing passwords), spam, and denial-of-service (DoS) attempts.
+
+🔒 4. Secure Payment Processing:
+Use third-party payment processors like Stripe or PayPal over secure HTTPS connections. Do not store raw credit card data.
+
+Why it matters: Financial data is high-stakes—if compromised, it erodes user trust and could expose your company to legal penalties.
+
+📡 5. HTTPS & Data Encryption: 
+All communication between clients and servers must use HTTPS. Sensitive data like passwords should be hashed and encrypted in transit and at rest.
+
+Why it matters: Protects against eavesdropping and data interception, especially on public networks.
+
+🧼 6. Input Validation & Sanitization: 
+Sanitize inputs on both client and server sides to prevent XSS, SQL injection, and other common attacks.
+
+Why it matters: User input is the number one attack vector. A single unsanitized field could compromise your entire database.
+
+🧩 7. Logging & Monitoring:
+Track suspicious behavior, failed login attempts, and system anomalies through logs and alerting systems.
+
+Why it matters: Helps you detect attacks early and respond before real damage is done.
+
+🔁 8. Role-Based Access Control (RBAC):
+Assigns different levels of access (guest, host, admin) based on roles.
+
+Why it matters: Reduces the risk of accidental or intentional misuse of features and ensures users only see what they’re meant to.
+
+
+
