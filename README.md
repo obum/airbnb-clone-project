@@ -1,5 +1,12 @@
 # Airbnb Clone Project
-The Airbnb Clone Project is a comprehensive, real-world application designed to simulate the development of a robust booking platform like Airbnb. It involves a deep dive into full-stack development, focusing on backend systems, database design, API development, and application security. This project fosters the understanding of complex architectures, workflows, and collaborative team dynamics while building a scalable web application.
+The Airbnb Clone Project is a comprehensive, real-world application designed to simulate the development of a robust booking platform like Airbnb. It involves a deep dive into full-stack development (Python Django, SQL, Redis, Docker, CI/CD), focusing on backend systems, database design, API development, and application security. This project fosters the understanding of complex architectures, workflows, and collaborative team dynamics while building a scalable web application.
+
+# Team Roles
++ Backend Developer: Responsible for implementing API endpoints, database schemas, and business logic.
++ Database Administrator: Manages database design, indexing, and optimizations.
++ DevOps Engineer: Handles deployment, monitoring, and scaling of the backend services.
++ QA Engineer: Ensures the backend functionalities are thoroughly tested and meet quality standards.
++ Project Manager: Makes sure a product or its part is delivered on time and within budget
 
 # Technology Stack
 + Django: A high-level Python web framework used for building the RESTful API.
@@ -10,10 +17,3 @@ The Airbnb Clone Project is a comprehensive, real-world application designed to 
 + Redis: Used for caching and session management.
 + Docker: Containerization tool for consistent development and deployment environments.
 + CI/CD Pipelines: Automated pipelines for testing and deploying code changes.
-
-# Team Roles
-+ Backend Developer: Responsible for implementing API endpoints, database schemas, and business logic.
-+ Database Administrator: Manages database design, indexing, and optimizations.
-+ DevOps Engineer: Handles deployment, monitoring, and scaling of the backend services.
-+ QA Engineer: Ensures the backend functionalities are thoroughly tested and meet quality standards.
-+ Project Manager: Makes sure a product or its part is delivered on time and within budget
