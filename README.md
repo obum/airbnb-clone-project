@@ -136,7 +136,7 @@ A payment is linked to one booking. (1 - 1)
 OpenAPI Standard: The backend APIs are documented using the OpenAPI standard to ensure clarity and ease of integration.
 Django REST Framework: Provides a comprehensive RESTful API for handling CRUD operations on user and property data.
 GraphQL: Offers a flexible and efficient query mechanism for interacting with the backend.
-2. User Authentication
+2. User Authentication / User Managerment
 Endpoints: /users/, /users/{user_id}/
 Features: Register new users, authenticate, and manage user profiles.
 3. Property Management
