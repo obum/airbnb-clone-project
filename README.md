@@ -226,4 +226,4 @@ CI/CD stands for Continuous Integration and Continuous Deployment (or Delivery)â
 + CircleCI	Cloud-based CI/CD with seamless GitHub/GitLab integration
 + Travis CI	CI/CD tool often used with open-source projects
 + Terraform	Infrastructure as codeâ€”provision cloud resources alongside deployments
-+ Kubernetes	Automates deployment and scaling of containerized applications
++ Kubernetes	Automates deployment and scaling of containerized applications.
